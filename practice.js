@@ -87,7 +87,7 @@ function only55(array) {
   return num;
 }
 
-console.log(only55([55, 76, 12, 55, 100]));
+// console.log(only55([55, 76, 12, 55, 100]));
 
 
 // Write a method that accepts an array of strings and returns a new array that has the string "awesomesauce" inserted between every string. 
@@ -110,3 +110,91 @@ console.log(only55([55, 76, 12, 55, 100]));
 
 // Write a method that accepts two arrays of numbers, and prints the sum of every combination of numbers from first and second array. 
 // For example, if the method receives [1, 5, 10] and [100, 500, 1000], the method should print a list: 101, 501, 1001, 105, 505, 1005, 110, 510, 1010].
+
+
+// Write a function that accepts an array of strings and returns a new array containing every other string from the original array. For example, if the input is ["a", "b", "c", "d", "e", "f"], the output should be ["a", "c", "e"].
+
+function selectEvenItems(strings) {
+  var result = [];
+  var index = 0;
+  strings.forEach(function (string) {
+    if (index % 2 === 0) {
+      result.push(string);
+    }
+    index++;
+  });
+  return result;
+}
+// console.log(selectEvenItems(["a", "b", "c", "d", "e", "f"]));
+
+// Write a method that accepts one argument - an array of numbers. The method should return the greatest number. For example, if the input is [5, 4, 8, 1, 2], the output should be 8.
+
+function max(numbers) {
+  var currentMax = numbers[0];
+  numbers.forEach(function (number) {
+    if (number > currentMax) {
+      currentMax = number;
+    }
+  });
+  return currentMax;
+}
+
+// console.log(max([5, 4, 8, 1, 2]));
+
+function factorial(number) {
+  var result = 1;
+  var currentNumber = number;
+  for (var index = 1; index <= currentNumber; index++) {
+    console.log(result = result * index);
+  }
+  return result;
+}
+// console.log(factorial(5));
+
+function summit(numbers) {
+  var result = 0;
+  for (var i = 0; i < numbers.length; i++) {
+    result += numbers[i];
+  }
+  return result;
+}
+
+// console.log(summit([5, 4, 8, 1, 2]));
+
+function smallestString(strings) {
+  var result = strings[0];
+  for (var i = 0; i < strings.length; i++) {
+    if (strings[i].length < result.length) {
+      result = strings[i];
+    }
+  }
+  return result;
+}
+
+// console.log(smallestString(["apple", "orange", "grapes"]));
+
+function reversedNumbers(numbers) {
+  var result = [];
+  var index = numbers.length - 1;
+  for (var i; index >= 0; i++) {
+    result.push(numbers[index]);
+    index--;
+  }
+  return result;
+}
+
+// console.log(reversedNumbers([1, 2, 3]));
+
+function aWords(words) {
+  var result = 0;
+  var index = 0;
+  while (index < words.length) {
+    if (words[index][0] === "a") {
+      result += 1;
+    }
+    index += 1;
+  }
+  return result;
+}
+
+console.log(aWords(["apple", "orange", "grapes"]));
